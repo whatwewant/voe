@@ -1,0 +1,19 @@
+{
+  "entry": "src/index.js",
+  "extraBabelPlugins": [
+    "transform-decorators-legacy"
+  ],
+  "env": {
+    "development": {
+      "extraBabelPlugins": [
+        "dva-hmr",
+        "transform-runtime"
+      ]
+    },
+    "production": {
+      "extraBabelPlugins": [
+        "transform-runtime"
+      ]
+    }
+  }
+}
