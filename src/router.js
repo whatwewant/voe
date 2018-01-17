@@ -1,8 +1,17 @@
 import React from 'react';
-import { Router, Route, Switch } from 'dva/router';
-import App from './routes/App';
+import dynamic from 'dva/dynamic';
+import { Router, Route } from 'dva/router';
 
-function RouterConfig({ history }) {
+import Loading from './components/Loading';
+
+dynamic.setDefaultLoadingComponent = Loading;
+
+function RouterConfig({ app, history }) {
+  const App = dynamic({
+    app,
+    component: () => import('./routes/App'),
+  });
+
   return (
     <Router history={history}>
       <Route path="/" component={App} />

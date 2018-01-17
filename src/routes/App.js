@@ -3,25 +3,26 @@ import { Redirect, Route, Switch } from 'dva/router';
 import Loadable from 'react-loadable';
 import { withStyles } from 'material-ui/styles';
 
+import Loading from '../components/Loading';
 import withRoot from '../components/withRoot';
 
 const Home = Loadable({
-  loading: () => null,
+  loading: () => <Loading />,
   loader: () => import('./Home'),
 });
 
 const Post = Loadable({
-  loading: () => null,
+  loading: () => <Loading />,
   loader: () => import('./Post'),
 });
 
 const Archieve = Loadable({
-  loading: () => null,
+  loading: () => <Loading />,
   loader: () => import('./Archieve'),
 });
 
 const Category = Loadable({
-  loading: () => null,
+  loading: () => <Loading />,
   loader: () => import('./Category'),
 });
 
@@ -33,7 +34,6 @@ class App extends React.PureComponent {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/post" component={Post} />
-        
         <Redirect exact from="/archieve" to="/post" />
         <Redirect exact from="/category" to="/post" />
         <Route exact path="/archieve/:id" component={Archieve} />
