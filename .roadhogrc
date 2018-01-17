@@ -1,5 +1,6 @@
 {
   "entry": "src/index.js",
+  "publicPath": "./",
   "hash": true,
   "extraBabelPlugins": [
     "transform-decorators-legacy"
