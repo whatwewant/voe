@@ -268,7 +268,7 @@ export default class SideBar extends React.PureComponent {
 
     const drawerProps = {
       open,
-      onRequestClose,
+      onClose: onRequestClose,
     };
 
     return (
