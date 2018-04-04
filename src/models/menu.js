@@ -10,11 +10,11 @@ export default {
       label: '归档',
       // selected: true,
       submenus: [
-        { path: '/achieve/2017/10', key: 'Oct 2017', label: '十月 2017', badge: 1 },
-        { path: '/achieve/2017/09', key: 'Sep 2017', label: '九月 2017', badge: 1 },
-        { path: '/achieve/2017/08', key: 'Aug 2017', label: '八月 2017', badge: 2 },
-        { path: '/achieve/2017/06', key: 'Jan 2017', label: '六月 2017', badge: 4 },
-        { path: '/achieve/2017/04', key: 'Aus 2017', label: '四月 2017', badge: 1 },
+        { path: '/archieve/2017/10', key: 'Oct 2017', label: '十月 2017', badge: 1 },
+        { path: '/archieve/2017/09', key: 'Sep 2017', label: '九月 2017', badge: 1 },
+        { path: '/archieve/2017/08', key: 'Aug 2017', label: '八月 2017', badge: 2 },
+        { path: '/archieve/2017/06', key: 'Jan 2017', label: '六月 2017', badge: 4 },
+        { path: '/archieve/2017/04', key: 'Aus 2017', label: '四月 2017', badge: 1 },
       ],
     },
     {

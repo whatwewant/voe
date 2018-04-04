@@ -74,6 +74,10 @@ const styles = theme => ({
   },
   root: {
     backgroundColor: '#E6E8E9',
+
+    '@media (max-width: 839px)': {
+      height: '100%',
+    },
   },
 });
 
@@ -103,7 +107,7 @@ function withRoot() {
       onToggleMenu = () => {
         this.setState({ menuOpen: !this.state.menuOpen });
       };
-  
+      
       render() {
         const { menuOpen } = this.state;
   

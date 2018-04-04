@@ -28,7 +28,7 @@ export default {
       },
       category: 'tech',
       tags: ['a', 'b', 'c'],
-      createdAt: '10月 12, 2017',
+      createdAt: '9月 12, 2017',
     },
     'p3': {
       id: 'p3',
@@ -42,7 +42,7 @@ export default {
       },
       category: 'tech',
       tags: ['a', 'b', 'c'],
-      createdAt: '10月 12, 2017',
+      createdAt: '8月 12, 2017',
     },
     'p4': {
       id: 'p4',

@@ -178,19 +178,19 @@ const Attributes = ({ author, category, date }) => (
 
 export default class ArticleAbstruct extends PureComponent {
   static defaultProps = {
-    banner: 'http://statics.uberqd.com/image-saving/2017/11/26/7e40ba5c1e73ce24f6006332eaadb15c.png',
-    title: '手动编译 Nginx 并安装 VeryNginx',
-    content: 'VeryNginx 是个非常有意思且便捷的 Nginx 扩展程序。最近新开了台 VPS，便想体验一下它带来的快感。',
-    url: 'https://blog.viosey.com/2017/10/12/compile-nginx-and-install-verynginx/',
-    author: {
-      avatar: 'http://statics.uberqd.com/image-saving/2017/11/26/7756f56a0748426e47f13f787ef7bfcd.png',
-      name: 'Viosey',
-    },
-    category: {
-      label: '技术向',
-      url: 'https://cdn.viosey.com/img/avatar/blog_avatar.png',
-    },
-    createdAt: '10月 12, 2017',
+    // banner: 'http://statics.uberqd.com/image-saving/2017/11/26/7e40ba5c1e73ce24f6006332eaadb15c.png',
+    // title: '手动编译 Nginx 并安装 VeryNginx',
+    // content: 'VeryNginx 是个非常有意思且便捷的 Nginx 扩展程序。最近新开了台 VPS，便想体验一下它带来的快感。',
+    // url: 'https://blog.viosey.com/2017/10/12/compile-nginx-and-install-verynginx/',
+    // author: {
+    //   avatar: 'http://statics.uberqd.com/image-saving/2017/11/26/7756f56a0748426e47f13f787ef7bfcd.png',
+    //   name: 'Viosey',
+    // },
+    // category: {
+    //   label: '技术向',
+    //   url: 'https://cdn.viosey.com/img/avatar/blog_avatar.png',
+    // },
+    // createdAt: '10月 12, 2017',
   };
 
   render() {

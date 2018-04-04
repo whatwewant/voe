@@ -36,7 +36,7 @@ class App extends React.PureComponent {
         <Route path="/post" component={Post} />
         <Redirect exact from="/archieve" to="/post" />
         <Redirect exact from="/category" to="/post" />
-        <Route exact path="/archieve/:id" component={Archieve} />
+        <Route exact path="/archieve/:year/:month" component={Archieve} />
         <Route exact path="/category/:id" component={Category} />
       </Switch>
     );

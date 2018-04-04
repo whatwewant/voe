@@ -2,8 +2,9 @@ import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import marked from 'marked';
 
-import Card, { CardActions, CardContent, CardMedia, CardHeader } from 'material-ui/Card';
+import Card from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
+import { CircularProgress } from 'material-ui/Progress';
 
 import IconBookmark from 'material-ui-icons/Bookmark';
 import IconShare from 'material-ui-icons/Share';
@@ -56,6 +57,8 @@ const Container = styled(Card)`
     margin: 0;
     width: 100%;
     // height: 800px;
+    height: 100%;
+    display: block;
   }
 `;
 
@@ -176,6 +179,18 @@ const ContentWrap = styled.div`
   padding-bottom: 1pc;
 `;
 
+const LoadingWrapper = styled.div`
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+`;
+
+const Loading = () => (
+  <LoadingWrapper>
+    <CircularProgress color="primary" />
+  </LoadingWrapper>
+);
+
 const Content = ({ content }) => (
   <ContentWrap className="markdown-body" dangerouslySetInnerHTML={{ __html: content }} />
 );
@@ -216,17 +231,18 @@ export default class ArticleDetail extends PureComponent {
 
   state = {
     content: '',
+    loading: true,
   };
 
   componentDidMount() {
     fetch('https://raw.githubusercontent.com/whatwewant/whatwewant.github.io/master/_posts/2016-01-29-nginx-prohibites-the-access-of-unbounded-domains.md')
       .then(e => e.text())
-      .then(content => this.setState({ content }));
+      .then(content => this.setState({ loading: false, content }));
   }
 
   render() {
     const { banner, title, url, author, actions, style, className } = this.props;
-    const { content } = this.state;
+    const { loading, content } = this.state;
     const rest = { style, className };
 
     return (
@@ -240,9 +256,13 @@ export default class ArticleDetail extends PureComponent {
           author={author}
           actions={actions}
         />
-        <Content
-          content={marked(content)}
-        />
+        {loading ? (
+          <Loading />
+        ) : (
+          <Content
+            content={marked(content)}
+          />
+        )}
       </Container>
     );
   }

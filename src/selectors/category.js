@@ -8,3 +8,9 @@ export const currentCategorySelector = createSelector(
   stateAppSelector,
   ({ category }) => category,
 );
+
+export const currentCategoryPostSelector = createSelector(
+  currentCategorySelector,
+  stateCategorySelector,
+  (current, data) => (data[current] || {}).posts,
+);

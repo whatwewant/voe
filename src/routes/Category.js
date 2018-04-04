@@ -8,9 +8,10 @@ import List, { ListItem } from 'material-ui/List';
 
 import FlatList from '../components/FlatList';
 import { Abstruct } from '../components/Article';
+import Empty from '../components/Empty';
 
-import { currentCategorySelector } from '../selectors/category';
-import postSelector from '../selectors/post';
+import { stateCategorySelector, currentCategoryPostSelector } from '../selectors/category';
+import { statePostSelector } from '../selectors/post';
 
 const styles = theme => ({
   many: {
@@ -28,12 +29,10 @@ const styles = theme => ({
 });
 
 const mapState = createSelector(
-  postSelector,
-  currentCategorySelector,
-  (posts, cat) => ({
-    posts: posts.filter(e => e.category.id === cat),
-    cat,
-  }),
+  currentCategoryPostSelector,
+  statePostSelector,
+  stateCategorySelector,
+  (keys, posts, cats) => ({ posts: keys.map(e => ({ ...posts[e], category: cats[posts[e].category] })) }),
 );
 
 const mapActions = dispatch => ({
@@ -50,6 +49,12 @@ export default class Category extends PureComponent {
     this.props.toCategory(this.props.match.params.id);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.id !== nextProps.match.params.id) {
+      this.props.toCategory(nextProps.match.params.id);
+    }
+  }
+
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -62,11 +67,15 @@ export default class Category extends PureComponent {
 
   render() {
     const { classes, posts } = this.props;
+    console.log(posts);
 
     return (
       <FlatList
         data={posts}
-        renderItem={post => (
+        renderEmpty={() => (
+          <Empty />
+        )}
+        renderItem={({ item: post }) => (
           <Abstruct {...post} />
         )}
       />

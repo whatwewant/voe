@@ -7,7 +7,7 @@ export default {
       name: 'event',
       label: '事件簿',
       posts: [
-        'p1', 'p2', 'p3', 'p4'
+        'p1',
       ],
       url: '/category/event',
     },
@@ -15,9 +15,7 @@ export default {
       id: 'share',
       name: 'share',
       label: '分享镜',
-      posts: [
-        'p1', 'p2', 'p3', 'p4'
-      ],
+      posts: [],
       url: '/category/share',
     },
     'create': {
@@ -25,7 +23,7 @@ export default {
       name: 'create',
       label: '创作集',
       posts: [
-        'p1', 'p2', 'p3', 'p4'
+        'p1', 'p2', 'p3',
       ],
       url: '/category/create',
     },
@@ -34,7 +32,7 @@ export default {
       name: 'tech',
       label: '技术向',
       posts: [
-        'p1', 'p2', 'p3', 'p4'
+        'p2', 'p3',
       ],
       url: '/category/tech',
     },
@@ -43,7 +41,7 @@ export default {
       name: 'self',
       label: '自言自语',
       posts: [
-        'p1', 'p2', 'p3', 'p4'
+        'p3', 'p4'
       ],
       url: '/category/self',
     },

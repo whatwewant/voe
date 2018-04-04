@@ -16,6 +16,8 @@ const Wrap = styled.div`
   @media screen and (max-width: 480px) {
     display: block;
     padding-top: 0px;
+    margin-bottom: 0px;
+    height: 100%;
   }
 `;
 
@@ -45,6 +47,7 @@ export default class Post extends PureComponent {
 
   render() {
     const { post } = this.props;
+    
     return (
       <Wrap>
         <Article {...post} />

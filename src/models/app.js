@@ -12,12 +12,20 @@ export default {
       email: 'i@viosey.com',
     },
 
+    archieve: '2017/10',
+
     category: 'tech',
 
     post: 'p2',
   },
 
   reducers: {
+    'set/archieve'(state, { payload: archieve }) {
+      return {
+        ...state,
+        archieve,
+      };
+    },
     'set/category'(state, { payload: category }) {
       return {
         ...state,
