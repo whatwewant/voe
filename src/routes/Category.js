@@ -6,6 +6,7 @@ import { createSelector } from 'reselect';
 import { withStyles } from 'material-ui/styles';
 import List, { ListItem } from 'material-ui/List';
 
+import FlatList from '../components/FlatList';
 import { Abstruct } from '../components/Article';
 
 import { currentCategorySelector } from '../selectors/category';
@@ -63,13 +64,12 @@ export default class Category extends PureComponent {
     const { classes, posts } = this.props;
 
     return (
-      <List className={classes.many}>
-        {posts.map((e, i) => (
-          <ListItem key={i} className={classes.one}>
-            <Abstruct {...e} />
-          </ListItem>
-        ))}
-      </List>
+      <FlatList
+        data={posts}
+        renderItem={post => (
+          <Abstruct {...post} />
+        )}
+      />
     );
   }
 }

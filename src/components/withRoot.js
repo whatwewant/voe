@@ -116,7 +116,6 @@ function withRoot() {
                 <Page
                   {...this.props}
                 />
-                <Footer />
               </AppWrapper>
             </MuiThemeProvider>
           </JssProvider>
